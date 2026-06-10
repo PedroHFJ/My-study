@@ -14,6 +14,7 @@ public class finalExercicio53 {
         int qtdFun = usuario.nextInt();
 
         exercicio53[] funcionarios = new exercicio53[qtdFun];
+        double mediaSalarial = 0;
 
         for (int i = 0; i < qtdFun; i++) {
             exercicio53 fun = new exercicio53();
@@ -38,12 +39,16 @@ public class finalExercicio53 {
             fun.salario = usuario.nextDouble();
 
             funcionarios[i] = fun;
+            mediaSalarial += fun.salario;
+
 
         }
         System.out.println("======CADASTRO======");
         for (int i = 0; i < qtdFun; i++){
             metodo.dados(funcionarios[i]);
         }
+        double total = mediaSalarial/qtdFun;
+        System.out.println("A media Salarial da empresa é R$"+total);
 
         usuario.close();
 
