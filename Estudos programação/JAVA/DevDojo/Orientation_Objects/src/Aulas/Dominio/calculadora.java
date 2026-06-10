@@ -48,4 +48,12 @@ public class calculadora {
         System.out.println("num4 = "+num4);
         System.out.println("num5 = "+num5);
     }
+
+    public void somaArrays(int[]numeros){
+        int soma = 0;
+        for(int num : numeros){
+            soma +=num;
+        }
+        System.out.println(soma);
+    }
 }
