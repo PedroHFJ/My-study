@@ -71,6 +71,16 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
 margin-top: 10px;
 }
 
+.login > a{
+    text-decoration: none;
+    color:#fff;
+}
+
+.login > a:hover{
+    color:#2800da;
+    transition: 0.5s;
+}
+
 .login:hover{
     background-color: transparent;
     border: 2px solid rgba(0, 0, 0, 0.35);

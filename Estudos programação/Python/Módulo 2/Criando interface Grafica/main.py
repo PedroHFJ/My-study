@@ -1,7 +1,7 @@
 import customtkinter as ctk
 from flask import Flask
 import webbrowser
-import threading
+import threading as thr
 import time
 
 
@@ -12,7 +12,7 @@ appe = Flask(__name__)
 
 @appe.route("/")
 def homepage():
-    return "Vamos se beijar ou nada a ver?"
+    return "Homepage"
 
 def iniciarServidor():
     appe.run(debug=False, use_reloader=False)
@@ -25,14 +25,14 @@ def validarLogin():
     if usuario =="pedro" and senha == "1309":
         feedback.configure(text="Senha correta", text_color="green")
 
-        servidor = threading.Thread(target=iniciarServidor, daemon=True)
+        servidor = thr.Thread(target=iniciarServidor, daemon=True)
         servidor.start()
 
         def abrirSite():
             time.sleep(1)
             webbrowser.open("http://127.0.0.1:5000")
 
-        threading.Thread(target=abrirSite, daemon=True).start()
+        thr.Thread(target=abrirSite, daemon=True).start()
 
     else:
         feedback.configure(text="Senha incorreta", text_color="red")
