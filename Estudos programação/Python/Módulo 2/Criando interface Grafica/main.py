@@ -12,7 +12,7 @@ appe = Flask(__name__)
 
 @appe.route("/")
 def homepage():
-    return "Vamos se beijar ou nada a ver?"
+    return "Bem- vindo"
 
 def iniciarServidor():
     appe.run(debug=False, use_reloader=False)
