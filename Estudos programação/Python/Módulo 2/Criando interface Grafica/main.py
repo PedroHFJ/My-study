@@ -1,5 +1,5 @@
 import customtkinter as ctk
-from flask import Flask
+from flask import Flask, render_template
 import webbrowser
 import threading as thr
 import time
@@ -12,7 +12,7 @@ appe = Flask(__name__)
 
 @appe.route("/")
 def homepage():
-    return "Bem- vindo"
+    return render_template("index.html")
 
 def iniciarServidor():
     appe.run(debug=False, use_reloader=False)

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Primitivo/Arrays/Arrays.iml" filepath="$PROJECT_DIR$/Primitivo/Arrays/Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DevDojo.iml" filepath="$PROJECT_DIR$/.idea/DevDojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Primitivo/EstruturadeCondicao/EstruturadeCondicao.iml" filepath="$PROJECT_DIR$/Primitivo/EstruturadeCondicao/EstruturadeCondicao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Primitivo/ExercicioAula30/ExercicioAula30.iml" filepath="$PROJECT_DIR$/Primitivo/ExercicioAula30/ExercicioAula30.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Orientation_Objects/Orientation_Objects.iml" filepath="$PROJECT_DIR$/Orientation_Objects/Orientation_Objects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Primitivo/Oriention_a_objetos/Oriention_a_objetos.iml" filepath="$PROJECT_DIR$/Primitivo/Oriention_a_objetos/Oriention_a_objetos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Primitivo/Oriention_a_objetos/src/Oriention_a_objetos2.iml" filepath="$PROJECT_DIR$/Primitivo/Oriention_a_objetos/src/Oriention_a_objetos2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Primitivo/Primitivo.iml" filepath="$PROJECT_DIR$/Primitivo/Primitivo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Primitivo/SwitchCondicionais/SwitchCondicionais.iml" filepath="$PROJECT_DIR$/Primitivo/SwitchCondicionais/SwitchCondicionais.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Primitivo/arraysMundimensionais/arraysMundimensionais.iml" filepath="$PROJECT_DIR$/Primitivo/arraysMundimensionais/arraysMundimensionais.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Primitivo/exercicioAula26/exercicioAula26.iml" filepath="$PROJECT_DIR$/Primitivo/exercicioAula26/exercicioAula26.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Primitivo/exercicioAula28/exercicioAula28.iml" filepath="$PROJECT_DIR$/Primitivo/exercicioAula28/exercicioAula28.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modulo_2/modulo_2.iml" filepath="$PROJECT_DIR$/modulo_2/modulo_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/new_Orientation_Objcets/new_Orientation_Objcets.iml" filepath="$PROJECT_DIR$/new_Orientation_Objcets/new_Orientation_Objcets.iml" />
+    </modules>
+  </component>
+</project>
