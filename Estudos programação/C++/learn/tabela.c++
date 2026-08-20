@@ -21,6 +21,7 @@ int main(){
                 scanf("%f", &vlDeposito);
                 saldo += vlDeposito;
                 break;
+
             case 2:
                 printf("Digite o valor do saque: ");
                 scanf("%f", &vlSaque);
@@ -28,7 +29,7 @@ int main(){
                     printf("Saque realizado!");
                     saldo -= vlSaque;
                 }else{
-                    printf("Deposito não realizado!\n");
+                    printf("Saque não realizado!\n");
                     printf("Saldo insuficiente!\n");
                 }
                 system("pause");
