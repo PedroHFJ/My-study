@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class saldoBancario {
+public class contaBancaria {
     public static void main(String[]args){
         Scanner obj = new Scanner(System.in);
         float saldo = 0;
