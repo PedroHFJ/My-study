@@ -1,15 +1,17 @@
 #include<iostream>
-using namespace std;
+#include<windows.h>
+
 
 int main(){
+    SetConsoleOutputCP(CP_UTF8);
     int num;
     int soma = 0;
     do{
-        cout<<"Digite zero caso queira sair"<<endl;
-        cout<<"Digite um numero pra somar: ";
-        cin>>num;
+        std::cout<<"Digite um número pra somar: ";
+        std::cout<<"Digite zero caso queira sair"<<std::endl;
+        std::cin>>num;
         soma +=num;
 
     }while(num!=0);
-    cout<<"A soma desses numeros = "<<soma<<endl;
+    std::cout<<"A soma desses numeros é igual a "<<soma<<std::endl;
 }
