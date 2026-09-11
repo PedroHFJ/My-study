@@ -1,6 +1,9 @@
 #include <iostream>
+#include<windows.h>
 
 int main(){
+    SetConsoleOutputCP(CP_UTF8);
+    
     const int n = 8;
     float array[n];
     bool jaContado[n] = {false};
