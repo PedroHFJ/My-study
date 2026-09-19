@@ -1,0 +1,8 @@
+<h1>Confirmar exclusão</h1>
+<p>Tem certeza que deseja excluir"{{despesa.descricao}}"?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Excluir</button>
+    <a href="{% url 'listar_despesas' %}">Cancelar</a>
+</form>

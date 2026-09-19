@@ -1,0 +1,11 @@
+<h1>Minhas despesas</h1>
+
+<ul>
+    {% for d in despesas %}
+    
+    <li>{{d.data}} - {{d.descricao}} - R$ {{d.valor}}</li>
+    <a href="{% url 'criar_despesas' %}">+Nova despesa</a>
+    <a href="{% url 'editar_despesa' d.pk %}">editar</a>
+    <a href="{% url 'excluir_despesa' d.pk %}">excluir</a>
+    {% endfor %}
+</ul>

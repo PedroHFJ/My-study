@@ -1,0 +1,9 @@
+<h1>Adicionar receita</h1>
+
+<ul>
+    {% for d in receita %}
+    
+    <li>{{d.data}} - {{d.descricao}} - R$ {{d.valor}}</li>
+    <a href="{% url 'criar_receita' %}">+Nova receita</a>
+    {% endfor %}
+</ul>
