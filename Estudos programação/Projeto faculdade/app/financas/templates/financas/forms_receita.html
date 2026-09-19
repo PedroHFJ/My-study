@@ -1,0 +1,6 @@
+<h1>Adicionar receita nova</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ forms.as_p}}
+    <button type="submit">Salvar</button>button>
+</form>
