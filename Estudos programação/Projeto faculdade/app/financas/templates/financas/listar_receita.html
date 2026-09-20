@@ -1,9 +1,9 @@
 <h1>Adicionar receita</h1>
-
+<a href="{% url 'criar_receitas' %}">+Nova receita</a>
 <ul>
     {% for d in receita %}
-    
     <li>{{d.data}} - {{d.descricao}} - R$ {{d.valor}} - {{d.quantidade_vendida}}</li>
-    <a href="{% url 'criar_receita' %}">+Nova receita</a>
+    <a href="{% url 'editar_receita' d.pk %}">Editar</a>
+    <a href="{% url 'excluir_receita' d.pk %}">Excluir</a>
     {% endfor %}
 </ul>
