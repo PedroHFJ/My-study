@@ -1,0 +1,32 @@
+{% extends 'financas/base.html' %}
+{% block content %}
+<div class="panel">
+  <h1>Evolução mensal</h1>
+  <canvas id="graficoMensal" height="100"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('graficoMensal');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: {{ labels|safe }},
+      datasets: [
+        {
+          label: 'Receitas', 
+          data: {{ receitas|safe }},
+          borderColor: '#2B5D3F',
+          backgroundColor: 'transparent'
+        },
+        {
+          label: 'Despesas',
+          data: {{ despesas|safe }},
+          borderColor: '#9C4A3C',
+          backgroundColor: 'transparent'
+        }
+      ]
+    }
+  });
+</script>
+{% endblock %}

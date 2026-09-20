@@ -1,0 +1,12 @@
+{% extends 'financas/base.html' %}
+{% block content %}
+<div class="panel">
+  <h1>DRE do mês</h1>
+  <p>Receita bruta — R$ <span class="num">{{ dre.receita_bruta }}</span></p>
+  <p>(–) Custos variáveis — R$ <span class="num">{{ dre.custos_variados }}</span></p>
+  <p>(–) Despesas fixas — R$ <span class="num">{{ dre.despesas_fixas }}</span></p>
+  <p>(–) DAS — R$ <span class="num">{{ dre.valor_das }}</span></p>
+  <hr>
+  <p><strong>Lucro líquido — R$ <span class="num">{{ dre.lucro_liquido }}</span></strong></p>
+</div>
+{% endblock %}

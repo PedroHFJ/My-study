@@ -1,9 +1,12 @@
-<h1>Confirmar exclusão</h1>
-<p>Tem certeza que deseja excluir?</p>
-
-<form method="post">
+{% extends 'financas/base.html' %}
+{% block content %}
+<div class="panel">
+  <h1>Excluir receita</h1>
+  <p>Tem certeza que deseja excluir "{{ receita.descricao }}"?</p>
+  <form method="post">
     {% csrf_token %}
-    <button type="submit">Excluir</button>
+    <button type="submit" class="btn">Sim, excluir</button>
     <a href="{% url 'listar_receita' %}">Cancelar</a>
-</form>
-
+  </form>
+</div>
+{% endblock %}

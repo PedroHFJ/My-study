@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>MEI Finanças</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F2F0E7; --surface:#FBFAF5; --ink:#1C2620; --ink-soft:#4A5148;
+    --muted:#8B8873; --line:#DEDACB; --green:#2B5D3F; --green-deep:#1E4630;
+    --gold:#B8843C; --gold-soft:#E8D6AE; --brick:#9C4A3C; --brick-soft:#EFD9D3;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; font-size:15px; line-height:1.5; }
+  h1,h2{ font-family:'Newsreader',serif; font-weight:500; margin:0 0 18px; }
+  .app{ display:grid; grid-template-columns:240px 1fr; min-height:100vh; }
+  .sidebar{ background:var(--green-deep); color:#EDE7D6; padding:32px 24px; }
+  .brand{ font-family:'Newsreader',serif; font-size:19px; margin-bottom:40px; }
+  nav a{ display:block; color:#C9C2A8; text-decoration:none; font-size:14px; padding:10px 12px; border-radius:6px; margin-bottom:2px; }
+  nav a:hover{ color:#FBFAF5; background:rgba(255,255,255,0.06); }
+  main{ padding:40px 48px; }
+  .panel{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:24px; margin-bottom:16px; }
+  .num{ font-variant-numeric: tabular-nums; }
+  table{ width:100%; border-collapse:collapse; font-size:14px; margin-top:18px; }
+  thead th{ text-align:left; color:var(--muted); font-size:12.5px; padding-bottom:10px; border-bottom:1px solid var(--line); }
+  tbody td{ padding:12px 4px; border-bottom:1px solid var(--line); }
+  tbody a{ color:var(--green); text-decoration:none; margin-right:10px; font-size:13px; }
+  .btn{ background:var(--green); color:#F5F1E4; border:none; padding:9px 16px; border-radius:7px; font-size:14px; cursor:pointer; text-decoration:none; display:inline-block; }
+  form p{ margin-bottom:14px; display:flex; flex-direction:column; gap:6px; }
+  form label{ font-size:12.5px; color:var(--muted); }
+  input, select{ border:1px solid var(--line); border-radius:6px; padding:8px 10px; width:100%; font-family:inherit; font-size:14px; }
+  hr{ border:none; border-top:1px solid var(--line); margin:16px 0; }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">MEI Finanças</div>
+    <nav>
+      <a href="{% url 'listar_despesas' %}">Despesas</a>
+      <a href="{% url 'listar_receita' %}">Receitas</a>
+      <a href="{% url 'dre_mensal' %}">DRE</a>
+      <a href="{% url 'imposto_atual' %}">Impostos</a>
+      <a href="{% url 'grafico_mensal' %}">Gráfico</a>
+    </nav>
+  </aside>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</div>
+</body>
+</html>

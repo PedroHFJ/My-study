@@ -1,7 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Despesas, Receita
-from .forms import DespesaForm, ReceitaForm
+from .forms import DespesaForm, ReceitaForm, CadastroForm, PerfilMEIForm
+from .calculos import calcular_das, gerar_dre, historico_dre
+from datetime import date
+import json
+
+
 
 
 @login_required
@@ -76,7 +81,7 @@ def editar_receita(request, pk):
             form.save()
             return redirect('listar_receita')
     else:
-        form = ReceitaForm()
+        form = ReceitaForm(instance=receita)
     return render(request, 'financas/form_receita.html', {'form' : form})
 
 @login_required
@@ -88,4 +93,60 @@ def excluir_receita(request,pk):
     return render(request, 'financas/confirmar_exclusao_receita.html', {'receita' : receita})
   
 
+#CALCULO DE IMPOSTO
 
+
+@login_required
+def imposto_atual(request):
+    das = calcular_das(request.user)
+    return render(request, 'financas/imposto_atual.html', {'das' : das})
+
+
+#DRE
+
+@login_required
+def dre_mensal(request):
+    hoje = date.today()
+    dados = gerar_dre(request.user, hoje.month, hoje.year)
+    return render(request, 'financas/dre_mensal.html', {'dre' : dados})
+
+#CADASTRO
+
+def cadastro(request):
+    if request.method == 'POST':
+        user_form = CadastroForm(request.POST)
+        perfil_form = PerfilMEIForm(request.POST)
+        if user_form.is_valid() and perfil_form.is_valid():
+            usuario = user_form.save()
+            perfil = perfil_form.save(commit=False)
+            perfil.usuario = usuario
+            perfil.save()
+            return redirect('login')
+    else:
+        user_form = CadastroForm()
+        perfil_form = PerfilMEIForm()
+        form = CadastroForm()
+    return render(request, 'financas/cadastro.html', 
+                  {
+                      'user_form' : user_form,
+                      'perfil_form' : perfil_form,
+                  })
+
+
+#GRAFICO
+
+@login_required
+def grafico_mensal(request):
+    historico = historico_dre(request.user, 6)
+
+    labels = [h['mes'] for h in historico]
+    receitas = [float(h['receita_bruta']) for h in historico]
+    despesas = [float(h['custos_variados'] + h['despesas_fixas']) for h in historico]
+
+    context = {
+        'labels' : json.dumps(labels),
+        'receitas' : json.dumps(receitas),
+        'despesas' : json.dumps(despesas),
+    }
+
+    return render(request, 'financas/grafico_mensal.html', context)

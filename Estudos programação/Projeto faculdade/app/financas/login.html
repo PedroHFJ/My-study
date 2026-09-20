@@ -1,0 +1,14 @@
+{% extends 'financas/base.html' %}
+{% block content %}
+<div class="panel">
+  <h1>Entrar</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn">Entrar</button>
+  </form>
+  <p style="margin-top:16px; font-size:13px;">
+    Não tem conta? <a href="{% url 'cadastro' %}">Cadastre-se</a>
+  </p>
+</div>
+{% endblock %}

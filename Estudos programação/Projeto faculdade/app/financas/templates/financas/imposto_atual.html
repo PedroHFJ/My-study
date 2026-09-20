@@ -1,0 +1,12 @@
+{% extends 'financas/base.html' %}
+{% block content %}
+<div class="panel">
+  <h1>Imposto do mês</h1>
+  {% if das %}
+    <p>Categoria: {{ das.categoria }}</p>
+    <p>Valor do DAS: R$ <span class="num">{{ das.valor_mensal }}</span></p>
+  {% else %}
+    <p>Nenhum valor de DAS cadastrado para sua categoria/ano. Cadastre no admin.</p>
+  {% endif %}
+</div>
+{% endblock %}

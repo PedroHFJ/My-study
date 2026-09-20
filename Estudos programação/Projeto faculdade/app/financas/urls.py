@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+
 urlpatterns = [
 
 #DESPESA
@@ -17,6 +18,26 @@ urlpatterns = [
     path('receita/<int:pk>/editar_receita', views.editar_receita, name='editar_receita'),
     path('receita/<int:pk>/excluir_receita', views.excluir_receita, name='excluir_receita'),
 
+#IMPOSTO
+
+    path('imposto/', views.imposto_atual, name='imposto_atual'),
 
 
+#DRE
+
+    path('dre/', views.dre_mensal, name='dre_mensal'),
+
+
+#CADASTRO
+
+   
+    path('cadastro/', views.cadastro, name='cadastro'),
+
+
+#GRAFICO 
+    path('grafico/', views.grafico_mensal, name='grafico_mensal'),
+
+    
 ]
+
+

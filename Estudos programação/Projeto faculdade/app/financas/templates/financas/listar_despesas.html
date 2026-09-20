@@ -1,10 +1,24 @@
-<h1>Minhas despesas</h1>
-<a href="{% url 'criar_despesas' %}">+Nova despesa</a>
-<ul>
-    {% for d in despesas %}
-    
-    <li>{{d.data}} - {{d.descricao}} - R$ {{d.valor}}</li>
-    <a href="{% url 'editar_despesa' d.pk %}">editar</a>
-    <a href="{% url 'excluir_despesa' d.pk %}">excluir</a>
-    {% endfor %}
-</ul>
+{% extends 'financas/base.html' %}
+{% block content %}
+<div class="panel">
+  <h1>Minhas despesas</h1>
+  <a href="{% url 'criar_despesas' %}" class="btn">+ Nova despesa</a>
+  <table>
+    <thead><tr><th>Data</th><th>Descrição</th><th>Tipo</th><th>Valor</th><th></th></tr></thead>
+    <tbody>
+      {% for d in despesas %}
+      <tr>
+        <td>{{ d.data }}</td>
+        <td>{{ d.descricao }}</td>
+        <td>{{ d.get_tipo_display }}</td>
+        <td class="num">R$ {{ d.valor }}</td>
+        <td>
+          <a href="{% url 'editar_despesa' d.pk %}">editar</a>
+          <a href="{% url 'excluir_despesa' d.pk %}">excluir</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
