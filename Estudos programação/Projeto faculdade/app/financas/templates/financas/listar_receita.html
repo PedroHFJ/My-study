@@ -3,7 +3,7 @@
 <ul>
     {% for d in receita %}
     
-    <li>{{d.data}} - {{d.descricao}} - R$ {{d.valor}}</li>
+    <li>{{d.data}} - {{d.descricao}} - R$ {{d.valor}} - {{d.quantidade_vendida}}</li>
     <a href="{% url 'criar_receita' %}">+Nova receita</a>
     {% endfor %}
 </ul>
