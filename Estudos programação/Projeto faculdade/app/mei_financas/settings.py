@@ -127,5 +127,7 @@ MAILERS = {
     },
 }
 
+LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'listar_despesas'
 LOGOUT_REDIRECT_URL = 'login'
+
