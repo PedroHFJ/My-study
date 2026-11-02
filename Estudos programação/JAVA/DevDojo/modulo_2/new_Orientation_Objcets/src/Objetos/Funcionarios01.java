@@ -49,6 +49,4 @@ public class Funcionarios01 {
     }
 
 
-    private void lerCampo()
-
 }
