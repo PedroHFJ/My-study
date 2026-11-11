@@ -9,7 +9,7 @@ public class carroAula61OBJ {
         System.out.println("------------");
         System.out.println("Nome: "+this.nome);
         System.out.println("Velocidade Maxima: "+this.velocidadeMaxima);
-        System.out.println("Velocidade Maxima: "+this.velocidadeLimite);
+        System.out.println("Velocidade limite: "+this.velocidadeLimite);
     }
 
     public carroAula61OBJ(String nome, double velocidadeMaxima) {
